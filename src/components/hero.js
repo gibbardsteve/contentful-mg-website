@@ -11,6 +11,7 @@ import {
   Section,
   Subhead,
   Text,
+  Space,
 } from "./ui"
 
 export default function Hero(props) {
@@ -32,8 +33,9 @@ export default function Hero(props) {
               {props.h1}
             </Heading>
             <Subhead as="h2">{props.subhead}</Subhead>
-            <Text as="p">{props.text}</Text>
-            <ButtonList links={props.links} />
+            <Text as="p" variant="lead">{props.text}</Text>
+            <Subhead variant="subheadSmall">Call: {props.telephone}</Subhead>
+            <Subhead variant="subheadSmall">Email: {props.email}</Subhead>
           </Box>
         </Flex>
       </Container>
@@ -58,5 +60,7 @@ export const query = graphql`
       gatsbyImageData
       alt
     }
+    telephone
+    email
   }
 `

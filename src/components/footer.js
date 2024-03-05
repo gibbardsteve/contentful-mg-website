@@ -101,30 +101,11 @@ export default function Footer() {
     <Box as="footer" paddingY={4}>
       <Container>
         <Flex variant="start" responsive>
-          <NavLink to="/">
+        <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
             <BrandLogo />
           </NavLink>
           <Space />
-          <FlexList>
-            {socialLinks &&
-              socialLinks.map((link) => {
-                const url = getSocialURL(link)
-                return (
-                  url && (
-                    <li key={link.id}>
-                      <IconLink to={url}>
-                        <VisuallyHidden>{getSocialName(link)}</VisuallyHidden>
-                        {getSocialIcon(link)}
-                      </IconLink>
-                    </li>
-                  )
-                )
-              })}
-          </FlexList>
-        </Flex>
-        <Space size={5} />
-        <Flex variant="start" responsive>
           <FlexList variant="start" responsive>
             {links &&
               links.map((link) => (
@@ -139,15 +120,15 @@ export default function Footer() {
               meta.map((link) => (
                 <li key={link.id}>
                   <NavLink to={link.href}>
-                    <Text variant="small">{link.text}</Text>
+                    <Text >{link.text}</Text>
                   </NavLink>
                 </li>
               ))}
           </FlexList>
-          <Text variant="small">{copyright}</Text>
         </Flex>
+        <Space size={4} />
+        <Text variant="small" center>{copyright}</Text>
       </Container>
-      <Space size={3} />
     </Box>
   )
 }

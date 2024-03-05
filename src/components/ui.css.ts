@@ -63,7 +63,7 @@ export const containers: Record<Containers, string> = styleVariants({
 
 export const flex = style({
   display: "flex",
-  alignItems: "center",
+  alignItems: "flex-start",
 })
 
 export type FlexVariants =
@@ -204,6 +204,18 @@ export const section = style({
   },
 })
 
+export type Sections = "normal" | "nospace" 
+
+export const sections: Record<Sections, string> = styleVariants({
+  normal: [section],
+  nospace: [
+    {
+      paddingTop: theme.space[0],
+      paddingBottom: theme.space[0],
+    },
+  ]
+})
+
 export const margin = styleVariants(
   {
     ...theme.space,
@@ -341,12 +353,12 @@ export const text: Record<TextVariants, string> = styleVariants({
     margin0,
     {
       marginBottom: theme.space[2],
-      fontFamily: theme.fonts.mono,
       fontSize: theme.fontSizes[1],
       fontWeight: theme.fontWeights.medium,
       lineHeight: theme.lineHeights.tight,
       letterSpacing: theme.letterSpacings.wide,
       textTransform: "uppercase",
+      fontStyle: "normal",
     },
   ],
   caps: [

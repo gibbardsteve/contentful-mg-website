@@ -7,9 +7,9 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     siteUrl: "https://gatsbycontentfulhomepage.gatsbyjs.io/",
-    title: "Gatsby Contentful Homepage Starter",
-    author: `Gatsby`,
-    description: "A Gatsby Starter for building homepages with Contentful",
+    title: "MG Counselling",
+    author: `Margaret Gibbard`,
+    description: "Counselling services in Bristol and remote via video",
   },
   plugins: [
     {
@@ -36,6 +36,13 @@ module.exports = {
         theme_color: "#004ca3",
         icon: "src/favicon.png",
       },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`
+      }
     },
   ],
 }

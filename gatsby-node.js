@@ -125,6 +125,8 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage
       text: String
       links: [HomepageLink]
+      telephone: String
+      email: String
     }
 
     interface HomepageFeature implements Node & HomepageBlock {
@@ -387,6 +389,8 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage @link(from: "image___NODE")
       text: String
       links: [HomepageLink] @link(from: "links___NODE")
+      telephone: String
+      email: String
     }
 
     type ContentfulHomepageFeature implements Node & HomepageBlock & HomepageFeature

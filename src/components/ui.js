@@ -102,9 +102,14 @@ export function Nudge({ left, right, top, bottom, ...props }) {
   )
 }
 
-export function Section(props) {
-  return <Box as="section" className={styles.section} {...props} />
+//export function Section(props) {
+//  return <Box as="section" className={styles.section} {...props} />
+//}
+
+export function Section({ style = "normal", ...props }) {
+  return <Base as="section" cx={[styles.sections[style]]} {...props} />
 }
+
 
 export function Text({
   variant = "body",

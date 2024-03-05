@@ -32,8 +32,8 @@ function Product(props) {
 
 export default function ProductList(props) {
   return (
-    <Section>
-      <Container>
+    <Section style="nospace">
+      <Container width="narrowborder">
         <Box center paddingY={4}>
           <Heading>
             {props.kicker && <Kicker>{props.kicker}</Kicker>}
